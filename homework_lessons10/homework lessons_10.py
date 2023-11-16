@@ -2,12 +2,13 @@ import time
 
 
 class Auto:
-    def __init__(self,brand: str, age: int, mark: str,**kwargs):
+    def __init__(self,brand: str, age: int, mark: str,
+                 color: str ='white',weight:int= 1000):
         self.mark = mark
         self.brand = brand
         self.age = age
-        self.color = kwargs
-        self.weight = kwargs
+        self.color = color
+        self.weight = weight
 
     def move(self):
         print('move')
@@ -26,8 +27,10 @@ s3 = Auto('bmw', 1999, 'e39')
 
 class Truck (Auto):
     def __init__(self,max_load:int):
-        super().__init__(brand='mersedes',age=2000,mark='w210')
         self.max_load = max_load
+        super().__init__(brand='mersedes',age=2000,mark='w210',
+                         color= 'red',weight= 1500)
+
     def move(self):
         print('attention', 'move')
 
@@ -38,7 +41,8 @@ s4 = Truck(2000)
 print(s4.load())
 class Car(Auto):
     def __init__(self,max_speed: str):
-        super().__init__(brand='mersedes',age=2000,mark='w210')
+        super().__init__(brand='mersedes',age=2000,mark='w210',
+                         color='green',weight=2000)
         self.max_speed =max_speed
     def move(self):
         print('move',self.max_speed)
