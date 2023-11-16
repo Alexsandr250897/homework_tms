@@ -41,9 +41,9 @@ s4 = Truck(2000)
 print(s4.load())
 class Car(Auto):
     def __init__(self,max_speed: str):
+        self.max_speed = max_speed
         super().__init__(brand='mersedes',age=2000,mark='w210',
                          color='green',weight=2000)
-        self.max_speed =max_speed
     def move(self):
         print('move',self.max_speed)
 s5 = Car('<220>')
